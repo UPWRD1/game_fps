@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbfpia0gwba3w"]
+
+[ext_resource type="FontFile" uid="uid://cg132hx1cuosq" path="res://data/fonts/IBMPlexMono-Regular.ttf" id="1_fhwjs"]
+[ext_resource type="Script" path="res://hud.gd" id="1_l4oh1"]
+[ext_resource type="Texture2D" uid="uid://bubwl36108v2r" path="res://data/cursors/crosshair001.png" id="2_acna1"]
+
+[node name="Node2D" type="Node2D"]
+light_mask = 2
+visibility_layer = 2
+script = ExtResource("1_l4oh1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(1152, 648)
+offset_right = 40.0
+offset_bottom = 40.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+canvas_cull_mask = 4293918722
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+cull_mask = 2
+
+[node name="Hud" type="Node3D" parent="CanvasLayer/SubViewportContainer/SubViewport/Camera3D"]
+
+[node name="Node3D" type="Node3D" parent="CanvasLayer/SubViewportContainer/SubViewport/Camera3D/Hud"]
+transform = Transform3D(0.603208, -0.35837, 0.712539, 0, 0.893371, 0.449319, -0.797584, -0.271033, 0.538889, -0.5, -0.2, -0.586)
+
+[node name="health" type="Label3D" parent="CanvasLayer/SubViewportContainer/SubViewport/Camera3D/Hud/Node3D"]
+layers = 2
+double_sided = false
+fixed_size = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.505
+texture_filter = 0
+modulate = Color(0.960784, 0.141176, 0.152941, 1)
+text = "+ [=====]"
+font = ExtResource("1_fhwjs")
+font_size = 20
+outline_size = 0
+
+[node name="stamina" type="Label3D" parent="CanvasLayer/SubViewportContainer/SubViewport/Camera3D/Hud/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07, 0)
+layers = 2
+double_sided = false
+fixed_size = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.505
+texture_filter = 0
+modulate = Color(0.145098, 0.537255, 0.960784, 1)
+text = "! [=====]"
+font = ExtResource("1_fhwjs")
+font_size = 20
+outline_size = 0
+
+[node name="crosshair" type="Sprite2D" parent="CanvasLayer"]
+texture = ExtResource("2_acna1")

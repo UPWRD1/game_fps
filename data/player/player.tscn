@@ -1,0 +1,114 @@
+[gd_scene load_steps=14 format=3 uid="uid://cwiu8nsyij4gn"]
+
+[ext_resource type="Script" path="res://data/player/player.gd" id="1_u1w3t"]
+[ext_resource type="Shader" path="res://data/player/glitch.gdshader" id="2_epput"]
+[ext_resource type="Texture2D" uid="uid://bubwl36108v2r" path="res://data/cursors/crosshair001.png" id="2_nq3sk"]
+[ext_resource type="Shader" path="res://data/player/black_and_white.gdshader" id="2_wl38x"]
+[ext_resource type="PackedScene" uid="uid://cbfpia0gwba3w" path="res://hud.tscn" id="4_4nw8v"]
+
+[sub_resource type="Animation" id="Animation_saxjg"]
+resource_name = "head_bob"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.239392, 1, 0, -0.1, 0, 0.5, 1, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_1m4wq"]
+resource_name = "reset"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.00870516, 1, 0, 0, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_36ogt"]
+_data = {
+"head_bob": SubResource("Animation_saxjg"),
+"reset": SubResource("Animation_1m4wq")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q8l7f"]
+resource_local_to_scene = true
+shader = ExtResource("2_epput")
+shader_parameter/shake = 0.015
+shader_parameter/noiseQuality = 250.0
+shader_parameter/noiseIntensity = 0.001
+shader_parameter/offsetIntensity = 0.05
+shader_parameter/colorOffsetIntensity = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_62tcw"]
+shader = ExtResource("2_wl38x")
+shader_parameter/projector_power = 0.025
+shader_parameter/vignette_param = 20.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_phygr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3iwsb"]
+albedo_color = Color(0.917647, 0.529412, 0.168627, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3oyv7"]
+material = SubResource("StandardMaterial3D_3iwsb")
+
+[node name="player" type="CharacterBody3D"]
+script = ExtResource("1_u1w3t")
+
+[node name="head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+
+[node name="camera" type="Camera3D" parent="head"]
+
+[node name="camera_animation" type="AnimationPlayer" parent="head/camera"]
+libraries = {
+"": SubResource("AnimationLibrary_36ogt")
+}
+
+[node name="ColorRect" type="ColorRect" parent="head/camera"]
+top_level = true
+visibility_layer = 3
+z_index = 2
+material = SubResource("ShaderMaterial_q8l7f")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="ColorRect2" type="ColorRect" parent="head/camera/ColorRect"]
+z_index = 1
+material = SubResource("ShaderMaterial_62tcw")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Hud" parent="head/camera" instance=ExtResource("4_4nw8v")]
+
+[node name="hud_camera" type="Camera2D" parent="head"]
+
+[node name="crosshair" type="Sprite2D" parent="head/hud_camera"]
+texture = ExtResource("2_nq3sk")
+
+[node name="collision" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_phygr")
+
+[node name="body" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_3oyv7")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="significant_action" from="." to="." method="_on_significant_action"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
