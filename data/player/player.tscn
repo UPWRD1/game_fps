@@ -1,11 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://cwiu8nsyij4gn"]
+[gd_scene load_steps=17 format=3 uid="uid://cwiu8nsyij4gn"]
 
 [ext_resource type="Script" path="res://data/player/player.gd" id="1_u1w3t"]
-[ext_resource type="Shader" path="res://data/player/glitch.gdshader" id="2_epput"]
+[ext_resource type="Shader" path="res://data/shaders/glitch.gdshader" id="2_6sdgu"]
 [ext_resource type="Texture2D" uid="uid://bubwl36108v2r" path="res://data/cursors/crosshair001.png" id="2_nq3sk"]
-[ext_resource type="Shader" path="res://data/player/black_and_white.gdshader" id="2_wl38x"]
-[ext_resource type="PackedScene" uid="uid://cbfpia0gwba3w" path="res://hud.tscn" id="4_4nw8v"]
+[ext_resource type="Shader" path="res://data/shaders/black_and_white.gdshader" id="3_fsoo7"]
+[ext_resource type="PackedScene" uid="uid://cbfpia0gwba3w" path="res://scenes/util/hud.tscn" id="4_4nw8v"]
 [ext_resource type="PackedScene" uid="uid://dkfrsqiawumn0" path="res://scenes/pew.tscn" id="5_bib1v"]
+[ext_resource type="Shader" path="res://data/shaders/fisheye.gdshader" id="6_wc47o"]
 
 [sub_resource type="Animation" id="Animation_saxjg"]
 resource_name = "head_bob"
@@ -37,7 +38,7 @@ _data = {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q8l7f"]
 resource_local_to_scene = true
-shader = ExtResource("2_epput")
+shader = ExtResource("2_6sdgu")
 shader_parameter/shake = 0.015
 shader_parameter/noiseQuality = 250.0
 shader_parameter/noiseIntensity = 0.001
@@ -45,9 +46,13 @@ shader_parameter/offsetIntensity = 0.05
 shader_parameter/colorOffsetIntensity = 0.5
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_62tcw"]
-shader = ExtResource("2_wl38x")
+shader = ExtResource("3_fsoo7")
 shader_parameter/projector_power = 0.025
 shader_parameter/vignette_param = 20.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_grp4g"]
+shader = ExtResource("6_wc47o")
+shader_parameter/effect_amount = 1.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_phygr"]
 
@@ -98,6 +103,19 @@ grow_vertical = 2
 
 [node name="pew" parent="head/camera" instance=ExtResource("5_bib1v")]
 transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 0, -0.7, -1.883)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="head/camera"]
+
+[node name="ColorRect2" type="ColorRect" parent="head/camera/CanvasLayer"]
+material = SubResource("ShaderMaterial_grp4g")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RayCast3D" type="RayCast3D" parent="head/camera"]
+target_position = Vector3(0, -1, -200)
 
 [node name="hud_camera" type="Camera2D" parent="head"]
 

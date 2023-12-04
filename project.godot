@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="first person controller"
-run/main_scene="res://scenes/world.tscn"
+run/main_scene="res://scenes/levels/world.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 PlayerVars="*res://player_vars.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/tbloader/plugin.cfg")
 
 [filesystem]
 

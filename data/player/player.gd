@@ -51,7 +51,8 @@ var jump_count = 0
 	"glitch_shader": $head/camera/ColorRect,
 	"bw_shader": $head/camera/ColorRect/ColorRect2,
 	"hud_cam": $head/camera/Hud/CanvasLayer/SubViewportContainer/SubViewport/Camera3D,
-	"gun1": $head/camera/pew
+	"gun1": $head/camera/pew,
+	"raycast": $head/camera/RayCast3D
 }
 
 @onready var player_vars = get_node("/root/PlayerVars")
