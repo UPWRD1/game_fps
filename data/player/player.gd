@@ -256,6 +256,7 @@ func do_sigact():
 		if Input.is_action_pressed("do_sigact"):
 			is_sigact = true
 			Engine.time_scale = 0.1
+			#velocity = Vector3.ZERO
 			await get_tree().create_timer(0.1).timeout
 			while Engine.time_scale < 1:
 				Engine.time_scale = lerp(Engine.time_scale, 1.0, 0.5)

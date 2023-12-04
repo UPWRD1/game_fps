@@ -1,7 +1,9 @@
 extends Node
 
 @export var ability = 0
-@export var health = 100
+@export var health = 5
+@export var shield = 5
+@export var ammo = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

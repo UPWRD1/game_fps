@@ -30,23 +30,39 @@ cull_mask = 2
 [node name="Hud" type="Node3D" parent="CanvasLayer/SubViewportContainer/SubViewport/Camera3D"]
 
 [node name="Node3D" type="Node3D" parent="CanvasLayer/SubViewportContainer/SubViewport/Camera3D/Hud"]
-transform = Transform3D(0.603208, -0.35837, 0.712539, 0, 0.893371, 0.449319, -0.797584, -0.271033, 0.538889, -0.5, -0.2, -0.586)
+transform = Transform3D(0.258819, -0.620885, 0.739942, 0, 0.766044, 0.642788, -0.965926, -0.166366, 0.198267, -0.5, -0.2, -0.586)
 
-[node name="health" type="Label3D" parent="CanvasLayer/SubViewportContainer/SubViewport/Camera3D/Hud/Node3D"]
+[node name="health_machine" type="Label3D" parent="CanvasLayer/SubViewportContainer/SubViewport/Camera3D/Hud/Node3D"]
 layers = 2
 double_sided = false
 fixed_size = true
 alpha_cut = 1
 alpha_scissor_threshold = 0.505
 texture_filter = 0
-modulate = Color(0.960784, 0.141176, 0.152941, 1)
+modulate = Color(0.145098, 0.960784, 0.509804, 1)
 text = "+ [=====]"
 font = ExtResource("1_fhwjs")
 font_size = 20
 outline_size = 0
 
-[node name="stamina" type="Label3D" parent="CanvasLayer/SubViewportContainer/SubViewport/Camera3D/Hud/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07, 0)
+[node name="health_human" type="Label3D" parent="CanvasLayer/SubViewportContainer/SubViewport/Camera3D/Hud/Node3D"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 0, -7.45058e-08, 1, 0, -0.07, 0)
+layers = 2
+double_sided = false
+fixed_size = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.505
+texture_filter = 0
+modulate = Color(0.960784, 0.145098, 0.145098, 1)
+text = "* [=====]"
+font = ExtResource("1_fhwjs")
+font_size = 20
+outline_size = 0
+
+[node name="Node3D2" type="Node3D" parent="CanvasLayer/SubViewportContainer/SubViewport/Camera3D/Hud"]
+transform = Transform3D(0.258819, 0.620885, -0.739942, 0, 0.766044, 0.642788, 0.965926, -0.166366, 0.198267, 0.5, -0.2, -0.586)
+
+[node name="ability" type="Label3D" parent="CanvasLayer/SubViewportContainer/SubViewport/Camera3D/Hud/Node3D2"]
 layers = 2
 double_sided = false
 fixed_size = true
@@ -55,6 +71,20 @@ alpha_scissor_threshold = 0.505
 texture_filter = 0
 modulate = Color(0.145098, 0.537255, 0.960784, 1)
 text = "! [=====]"
+font = ExtResource("1_fhwjs")
+font_size = 20
+outline_size = 0
+
+[node name="ammo" type="Label3D" parent="CanvasLayer/SubViewportContainer/SubViewport/Camera3D/Hud/Node3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07, 0)
+layers = 2
+double_sided = false
+fixed_size = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.505
+texture_filter = 0
+modulate = Color(0.960784, 0.701961, 0.145098, 1)
+text = "X [=====]"
 font = ExtResource("1_fhwjs")
 font_size = 20
 outline_size = 0
