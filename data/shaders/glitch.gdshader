@@ -8,6 +8,7 @@ uniform float noiseIntensity: hint_range(0, 0.05,0.001) = 0.001;
 uniform float offsetIntensity: hint_range(0, 0.05,0.0001) = 0.05;
 uniform float colorOffsetIntensity: hint_range(0.1, 1.5,0.001) = 0.5;
 uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
+uniform bool greyscale = true;
 
 float rand(vec2 co)
 {
@@ -50,6 +51,8 @@ void fragment() {
     float b = texture(screen_texture, uv).b;
 
 	//vec4 tex = vec4(r, g, b, 1.0);
-	vec4 tex=vec4(r, g, b,1.0);
-    COLOR = tex;
+	vec4 tex= vec4(r, g, b, 1.0);
+    float avg = (tex.r + tex.g + tex.b) / 3.0;
+    COLOR.rgb = vec3(avg);
+
 }

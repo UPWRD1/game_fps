@@ -40,19 +40,20 @@ _data = {
 shader = ExtResource("6_wc47o")
 shader_parameter/effect_amount = 1.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q8l7f"]
+resource_local_to_scene = true
+shader = ExtResource("2_6sdgu")
+shader_parameter/shake = 0.0
+shader_parameter/noiseQuality = 250.0
+shader_parameter/noiseIntensity = 0.001
+shader_parameter/offsetIntensity = 0.05
+shader_parameter/colorOffsetIntensity = 0.978
+shader_parameter/greyscale = true
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_62tcw"]
 shader = ExtResource("3_fsoo7")
 shader_parameter/projector_power = 0.025
 shader_parameter/vignette_param = 20.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_q8l7f"]
-resource_local_to_scene = true
-shader = ExtResource("2_6sdgu")
-shader_parameter/shake = 0.015
-shader_parameter/noiseQuality = 250.0
-shader_parameter/noiseIntensity = 0.001
-shader_parameter/offsetIntensity = 0.05
-shader_parameter/colorOffsetIntensity = 0.5
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_phygr"]
 
@@ -84,27 +85,16 @@ transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 
 
 [node name="fisheye" type="ColorRect" parent="head/camera/CanvasLayer"]
 material = SubResource("ShaderMaterial_grp4g")
+use_parent_material = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="bw" type="ColorRect" parent="head/camera/CanvasLayer"]
-z_index = 1
-material = SubResource("ShaderMaterial_62tcw")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -1152.0
-offset_bottom = -648.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="glitch" type="ColorRect" parent="head/camera/CanvasLayer"]
 top_level = true
 visibility_layer = 3
-z_index = 2
 material = SubResource("ShaderMaterial_q8l7f")
 anchors_preset = 15
 anchor_right = 1.0
@@ -112,6 +102,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+
+[node name="bw" type="ColorRect" parent="head/camera/CanvasLayer"]
+z_index = -1
+material = SubResource("ShaderMaterial_62tcw")
+use_parent_material = true
+custom_minimum_size = Vector2(1152, 648)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="RayCast3D" type="RayCast3D" parent="head/camera"]
 target_position = Vector3(0, -1, -200)

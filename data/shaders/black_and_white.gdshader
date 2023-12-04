@@ -40,13 +40,13 @@ void fragment() {
 	//lines:
 	float RTIME2=round(TIME*5.0);
 	vec2 positionline=vec2(noise(vec2(RTIME2,RTIME2))/4.0,noise(vec2(RTIME2/3.0,RTIME2/3.0)));
-	float xline=(UV.x-positionline.x);
-	float yline=(UV.y-positionline.y);
-	float lin=energy*(xline*xline+0.00001*yline*yline)+.1*noise(vec2(UV.x,UV.y));
-	vec4 line=vec4(max(0.0,8.0-lin),max(0.0,8.0-lin),max(0.0,8.0-lin),1.0);
+	//float xline=(UV.x-positionline.x);
+	//float yline=(UV.y-positionline.y);
+	//float lin=energy*(xline*xline+0.00001*yline*yline)+.1*noise(vec2(UV.x,UV.y));
+	//vec4 line=vec4(max(0.0,8.0-lin),max(0.0,8.0-lin),max(0.0,8.0-lin),1.0);
 	
 	//combining-the parts:
-	vec4 dirt=mix(speckle,line,0.5);
+	vec4 dirt=speckle;
 	vec4 grayscale2=mix(random,vignette,0.7);
 	vec4 grayscale3=mix(dirt,grayscale2,0.7);
 	COLOR = mix(grayscale, grayscale3, projector_power);
