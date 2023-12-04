@@ -83,6 +83,7 @@ grow_vertical = 2
 size_flags_vertical = 3
 
 [node name="ColorRect2" type="ColorRect" parent="head/camera/ColorRect"]
+visible = false
 z_index = 1
 material = SubResource("ShaderMaterial_62tcw")
 layout_mode = 1

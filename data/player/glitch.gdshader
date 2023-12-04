@@ -34,7 +34,7 @@ void fragment() {
         float d = mod(TIME * i, 1.7);
         float o = sin(1.0 - tan(TIME * 0.24 * i));
     	o *= offsetIntensity;
-        uv.x += verticalBar(d, uv.y, o);
+        //uv.x += verticalBar(d, uv.y, o);
     }
 	float uvY = uv.y;
     uvY *= noiseQuality;

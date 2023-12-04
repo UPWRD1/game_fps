@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b21bt40ri1st3"]
+
+[ext_resource type="PackedScene" uid="uid://kdlljg8egp8r" path="res://data/models/pew.dae" id="1_42ikp"]
+
+[node name="pew" instance=ExtResource("1_42ikp")]
+
+[node name="AnimationPlayer" parent="." index="1"]
+callback_mode_method = 1
