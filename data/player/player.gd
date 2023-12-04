@@ -48,8 +48,8 @@ var jump_count = 0
 	"body": $body,
 	"collision": $collision,
 	"timer": $Timer,
-	"glitch_shader": $head/camera/ColorRect,
-	"bw_shader": $head/camera/ColorRect/ColorRect2,
+	"glitch_shader": $head/camera/CanvasLayer/glitch,
+	"bw_shader": $head/camera/CanvasLayer/bw,
 	"hud_cam": $head/camera/Hud/CanvasLayer/SubViewportContainer/SubViewport/Camera3D,
 	"gun1": $head/camera/pew,
 	"raycast": $head/camera/RayCast3D
@@ -188,9 +188,19 @@ func look(event):
 	parts.head.rotation_degrees.x -= event.relative.y * sensitivity
 	parts.head.rotation.x = clamp(parts.head.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
+func reload():
+	await get_tree().create_timer(0.2).timeout
+	PlayerVars.ammo = 5
+
 func shoot():
-	var ani = parts.gun1.get_node("AnimationPlayer")
-	ani.play("default", 0)
+	if PlayerVars.ammo > 0:
+		var ani = parts.gun1.get_node("AnimationPlayer")
+		PlayerVars.ammo -= 1
+		ani.play("default", 0)
+		await get_tree().create_timer(0.5).timeout
+	else:
+		reload()
+	
 func _physics_process(delta):
 	wall_run(delta)
 	do_sigact()

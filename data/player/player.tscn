@@ -4,7 +4,7 @@
 [ext_resource type="Shader" path="res://data/shaders/glitch.gdshader" id="2_6sdgu"]
 [ext_resource type="Texture2D" uid="uid://bubwl36108v2r" path="res://data/cursors/crosshair001.png" id="2_nq3sk"]
 [ext_resource type="Shader" path="res://data/shaders/black_and_white.gdshader" id="3_fsoo7"]
-[ext_resource type="PackedScene" uid="uid://cbfpia0gwba3w" path="res://scenes/util/hud.tscn" id="4_4nw8v"]
+[ext_resource type="PackedScene" uid="uid://cbfpia0gwba3w" path="res://hud.tscn" id="4_4nw8v"]
 [ext_resource type="PackedScene" uid="uid://dkfrsqiawumn0" path="res://scenes/pew.tscn" id="5_bib1v"]
 [ext_resource type="Shader" path="res://data/shaders/fisheye.gdshader" id="6_wc47o"]
 
@@ -36,6 +36,15 @@ _data = {
 "reset": SubResource("Animation_1m4wq")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_grp4g"]
+shader = ExtResource("6_wc47o")
+shader_parameter/effect_amount = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_62tcw"]
+shader = ExtResource("3_fsoo7")
+shader_parameter/projector_power = 0.025
+shader_parameter/vignette_param = 20.0
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q8l7f"]
 resource_local_to_scene = true
 shader = ExtResource("2_6sdgu")
@@ -44,15 +53,6 @@ shader_parameter/noiseQuality = 250.0
 shader_parameter/noiseIntensity = 0.001
 shader_parameter/offsetIntensity = 0.05
 shader_parameter/colorOffsetIntensity = 0.5
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_62tcw"]
-shader = ExtResource("3_fsoo7")
-shader_parameter/projector_power = 0.025
-shader_parameter/vignette_param = 20.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_grp4g"]
-shader = ExtResource("6_wc47o")
-shader_parameter/effect_amount = 1.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_phygr"]
 
@@ -75,7 +75,33 @@ libraries = {
 "": SubResource("AnimationLibrary_36ogt")
 }
 
-[node name="ColorRect" type="ColorRect" parent="head/camera"]
+[node name="Hud" parent="head/camera" instance=ExtResource("4_4nw8v")]
+
+[node name="pew" parent="head/camera" instance=ExtResource("5_bib1v")]
+transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 0, -0.7, -1.883)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="head/camera"]
+
+[node name="fisheye" type="ColorRect" parent="head/camera/CanvasLayer"]
+material = SubResource("ShaderMaterial_grp4g")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bw" type="ColorRect" parent="head/camera/CanvasLayer"]
+z_index = 1
+material = SubResource("ShaderMaterial_62tcw")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="glitch" type="ColorRect" parent="head/camera/CanvasLayer"]
 top_level = true
 visibility_layer = 3
 z_index = 2
@@ -86,33 +112,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-
-[node name="ColorRect2" type="ColorRect" parent="head/camera/ColorRect"]
-z_index = 1
-material = SubResource("ShaderMaterial_62tcw")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -1152.0
-offset_bottom = -648.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Hud" parent="head/camera" instance=ExtResource("4_4nw8v")]
-
-[node name="pew" parent="head/camera" instance=ExtResource("5_bib1v")]
-transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 0, -0.7, -1.883)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="head/camera"]
-
-[node name="ColorRect2" type="ColorRect" parent="head/camera/CanvasLayer"]
-material = SubResource("ShaderMaterial_grp4g")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="RayCast3D" type="RayCast3D" parent="head/camera"]
 target_position = Vector3(0, -1, -200)
@@ -130,4 +129,5 @@ mesh = SubResource("CapsuleMesh_3oyv7")
 
 [node name="Timer" type="Timer" parent="."]
 
+[connection signal="significant_action" from="." to="." method="_on_significant_action"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
