@@ -210,7 +210,7 @@ func _physics_process(delta):
 		if not is_on_floor() and not (state == State.WALL_RUNNING):
 			state = State.SLAMMING
 			slam()
-			  # Reset camera rotation when on floor
+		# Reset camera rotation when on floor
 
 	if Input.is_action_just_pressed("move_jump"):
 		if state == State.WALL_RUNNING:

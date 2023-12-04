@@ -40,7 +40,7 @@ func draw_bar(property: int, bar, symbol: String, reversed: bool):
 func updateHUD():
 	# Update labelAbility text
 	# Update labelAbility text
-	 # Update labelAbility text
+	# Update labelAbility text
 	draw_bar(PlayerVars.ability, parts.ability, "!", true)
 	draw_bar(PlayerVars.health, parts.health, "*", false)
 	draw_bar(PlayerVars.shield, parts.shield, "+", false)

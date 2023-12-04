@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bubwl36108v2r" path="res://data/cursors/crosshair001.png" id="2_nq3sk"]
 [ext_resource type="Shader" path="res://data/player/black_and_white.gdshader" id="2_wl38x"]
 [ext_resource type="PackedScene" uid="uid://cbfpia0gwba3w" path="res://hud.tscn" id="4_4nw8v"]
-[ext_resource type="PackedScene" uid="uid://kdlljg8egp8r" path="res://data/models/pew.dae" id="6_5x4d1"]
+[ext_resource type="PackedScene" uid="uid://dkfrsqiawumn0" path="res://scenes/pew.tscn" id="5_bib1v"]
 
 [sub_resource type="Animation" id="Animation_saxjg"]
 resource_name = "head_bob"
@@ -83,7 +83,6 @@ grow_vertical = 2
 size_flags_vertical = 3
 
 [node name="ColorRect2" type="ColorRect" parent="head/camera/ColorRect"]
-visible = false
 z_index = 1
 material = SubResource("ShaderMaterial_62tcw")
 layout_mode = 1
@@ -97,8 +96,8 @@ grow_vertical = 2
 
 [node name="Hud" parent="head/camera" instance=ExtResource("4_4nw8v")]
 
-[node name="pew" parent="head/camera" instance=ExtResource("6_5x4d1")]
-transform = Transform3D(-6.55671e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.55671e-09, 0.4, -0.6, -1.385)
+[node name="pew" parent="head/camera" instance=ExtResource("5_bib1v")]
+transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 0, -0.7, -1.883)
 
 [node name="hud_camera" type="Camera2D" parent="head"]
 
@@ -113,5 +112,4 @@ mesh = SubResource("CapsuleMesh_3oyv7")
 
 [node name="Timer" type="Timer" parent="."]
 
-[connection signal="significant_action" from="." to="." method="_on_significant_action"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
