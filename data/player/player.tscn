@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://cwiu8nsyij4gn"]
+[gd_scene load_steps=15 format=3 uid="uid://cwiu8nsyij4gn"]
 
 [ext_resource type="Script" path="res://data/player/player.gd" id="1_u1w3t"]
 [ext_resource type="Shader" path="res://data/player/glitch.gdshader" id="2_epput"]
 [ext_resource type="Texture2D" uid="uid://bubwl36108v2r" path="res://data/cursors/crosshair001.png" id="2_nq3sk"]
 [ext_resource type="Shader" path="res://data/player/black_and_white.gdshader" id="2_wl38x"]
 [ext_resource type="PackedScene" uid="uid://cbfpia0gwba3w" path="res://hud.tscn" id="4_4nw8v"]
+[ext_resource type="PackedScene" uid="uid://kdlljg8egp8r" path="res://data/models/pew.dae" id="6_5x4d1"]
 
 [sub_resource type="Animation" id="Animation_saxjg"]
 resource_name = "head_bob"
@@ -77,10 +78,6 @@ material = SubResource("ShaderMaterial_q8l7f")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -576.0
-offset_top = -324.0
-offset_right = -576.0
-offset_bottom = -324.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
@@ -92,10 +89,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Hud" parent="head/camera" instance=ExtResource("4_4nw8v")]
+
+[node name="pew" parent="head/camera" instance=ExtResource("6_5x4d1")]
+transform = Transform3D(-6.55671e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.55671e-09, 0.4, -0.6, -1.385)
 
 [node name="hud_camera" type="Camera2D" parent="head"]
 

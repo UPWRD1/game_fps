@@ -50,7 +50,8 @@ var jump_count = 0
 	"timer": $Timer,
 	"glitch_shader": $head/camera/ColorRect,
 	"bw_shader": $head/camera/ColorRect/ColorRect2,
-	"hud_cam": $head/camera/Hud/CanvasLayer/SubViewportContainer/SubViewport/Camera3D
+	"hud_cam": $head/camera/Hud/CanvasLayer/SubViewportContainer/SubViewport/Camera3D,
+	"gun1": $head/camera/pew
 }
 
 @onready var player_vars = get_node("/root/PlayerVars")
@@ -113,7 +114,6 @@ func wall_run(delta):
 
 func _reset_camera_rotation():
 	parts.camera.rotation_degrees.z = lerp(parts.camera.rotation_degrees.z, 0.0, 0.1)
-
 
 func _ready():
 	world.pause.connect(_on_pause)
@@ -187,6 +187,9 @@ func look(event):
 	parts.head.rotation_degrees.x -= event.relative.y * sensitivity
 	parts.head.rotation.x = clamp(parts.head.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
+func shoot():
+	var ani = parts.gun1.get_node("AnimationPlayer")
+	ani.play("default", 0)
 func _physics_process(delta):
 	wall_run(delta)
 	do_sigact()
@@ -216,7 +219,8 @@ func _physics_process(delta):
 			state = State.JUMPING
 			jump()
 
-		
+	if Input.is_action_just_pressed("mouse1"):
+		shoot()
 
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	direction = input_dir.normalized().rotated(-parts.head.rotation.y)
@@ -229,7 +233,6 @@ func _physics_process(delta):
 	animation_bob(input_dir)
 
 	move_and_slide()
-
 
 func _input(event):
 	if event is InputEventMouseMotion:

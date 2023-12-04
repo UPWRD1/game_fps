@@ -1,8 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbfpia0gwba3w"]
+[gd_scene load_steps=6 format=3 uid="uid://cbfpia0gwba3w"]
 
 [ext_resource type="FontFile" uid="uid://cg132hx1cuosq" path="res://data/fonts/IBMPlexMono-Regular.ttf" id="1_fhwjs"]
 [ext_resource type="Script" path="res://hud.gd" id="1_l4oh1"]
 [ext_resource type="Texture2D" uid="uid://bubwl36108v2r" path="res://data/cursors/crosshair001.png" id="2_acna1"]
+[ext_resource type="Shader" path="res://data/player/glitch.gdshader" id="3_qg6as"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yksyc"]
+resource_local_to_scene = true
+shader = ExtResource("3_qg6as")
+shader_parameter/shake = 0.015
+shader_parameter/noiseQuality = 250.0
+shader_parameter/noiseIntensity = 0.001
+shader_parameter/offsetIntensity = 0.05
+shader_parameter/colorOffsetIntensity = 0.5
 
 [node name="Node2D" type="Node2D"]
 light_mask = 2
@@ -91,3 +101,16 @@ outline_size = 0
 
 [node name="crosshair" type="Sprite2D" parent="CanvasLayer"]
 texture = ExtResource("2_acna1")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+top_level = true
+light_mask = 2
+visibility_layer = 2
+z_index = 2
+material = SubResource("ShaderMaterial_yksyc")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
