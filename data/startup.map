@@ -1,0 +1,152 @@
+// Game: Godot
+// Format: Standard
+// entity 0
+{
+"classname" "worldspawn"
+"_tb_textures" "textures;textures/level_textures"
+"_tb_mod" "textures"
+// brush 0
+{
+( -64 -64 -16 ) ( -64 -63 -16 ) ( -64 -64 -15 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( -64 -64 -16 ) ( -64 -64 -15 ) ( -63 -64 -16 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( -64 -64 -16 ) ( -63 -64 -16 ) ( -64 -63 -16 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( 64 64 16 ) ( 64 65 16 ) ( 65 64 16 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( 64 64 16 ) ( 65 64 16 ) ( 64 64 17 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( 64 64 16 ) ( 64 64 17 ) ( 64 65 16 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+}
+// brush 1
+{
+( -80 64 96 ) ( -80 -192 96 ) ( -80 -192 16 ) level_textures/TCom_ConcreteNew0059_1_seamless_S 0 0 0 0.5 0.5
+( -80 -192 96 ) ( -64 -192 96 ) ( -64 -192 16 ) level_textures/TCom_ConcreteNew0059_1_seamless_S 0 0 0 0.5 0.5
+( -64 -192 16 ) ( -64 64 16 ) ( -80 64 16 ) level_textures/TCom_ConcreteNew0059_1_seamless_S 0 0 0 0.5 0.5
+( -80 64 96 ) ( -64 64 96 ) ( -64 -192 96 ) level_textures/TCom_ConcreteNew0059_1_seamless_S 0 0 0 0.5 0.5
+( -64 64 16 ) ( -64 64 96 ) ( -80 64 96 ) level_textures/TCom_ConcreteNew0059_1_seamless_S 0 0 0 0.5 0.5
+( -64 -192 96 ) ( -64 64 96 ) ( -64 64 16 ) level_textures/TCom_ConcreteNew0059_1_seamless_S -16 -16 0 0.5 0.5
+}
+// brush 2
+{
+( 64 -64 -16 ) ( 64 -63 -16 ) ( 64 -64 -15 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 -90 0.5 0.5
+( 64 -64 -16 ) ( 64 -64 -15 ) ( 65 -64 -16 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 -90 0.5 0.5
+( 64 -64 -16 ) ( 65 -64 -16 ) ( 64 -63 -16 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 -90 0.5 0.5
+( 192 64 16 ) ( 192 65 16 ) ( 193 64 16 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 -90 0.5 0.5
+( 192 64 16 ) ( 193 64 16 ) ( 192 64 17 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 -90 0.5 0.5
+( 192 64 16 ) ( 192 64 17 ) ( 192 65 16 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 -90 0.5 0.5
+}
+// brush 3
+{
+( -64 -192 -16 ) ( -64 -191 -16 ) ( -64 -192 -15 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( -64 -192 -16 ) ( -64 -192 -15 ) ( -63 -192 -16 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( -64 -192 -16 ) ( -63 -192 -16 ) ( -64 -191 -16 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( 64 -64 16 ) ( 64 -63 16 ) ( 65 -64 16 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( 64 -64 16 ) ( 65 -64 16 ) ( 64 -64 17 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( 64 -64 16 ) ( 64 -64 17 ) ( 64 -63 16 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+}
+// brush 4
+{
+( 64 -192 16 ) ( 64 -192 17 ) ( 64 -193 16 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 90 0.5 0.5
+( 64 -192 16 ) ( 63 -192 16 ) ( 64 -192 17 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 90 0.5 0.5
+( 192 -64 -16 ) ( 191 -64 -16 ) ( 192 -65 -16 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 90 0.5 0.5
+( 64 -192 16 ) ( 64 -193 16 ) ( 63 -192 16 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 90 0.5 0.5
+( 192 -64 -16 ) ( 192 -64 -15 ) ( 191 -64 -16 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 90 0.5 0.5
+( 192 -64 -16 ) ( 192 -65 -16 ) ( 192 -64 -15 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 90 0.5 0.5
+}
+// brush 5
+{
+( 192 64 96 ) ( 192 -192 96 ) ( 192 -192 16 ) level_textures/TCom_ConcreteNew0059_1_seamless_S 0 0 0 0.5 0.5
+( 192 -192 96 ) ( 208 -192 96 ) ( 208 -192 16 ) level_textures/TCom_ConcreteNew0059_1_seamless_S 0 0 0 0.5 0.5
+( 208 -192 16 ) ( 208 64 16 ) ( 192 64 16 ) level_textures/TCom_ConcreteNew0059_1_seamless_S 0 0 0 0.5 0.5
+( 192 64 96 ) ( 208 64 96 ) ( 208 -192 96 ) level_textures/TCom_ConcreteNew0059_1_seamless_S 0 0 0 0.5 0.5
+( 208 64 16 ) ( 208 64 96 ) ( 192 64 96 ) level_textures/TCom_ConcreteNew0059_1_seamless_S 0 0 0 0.5 0.5
+( 208 -192 96 ) ( 208 64 96 ) ( 208 64 16 ) level_textures/TCom_ConcreteNew0059_1_seamless_S -16 -16 0 0.5 0.5
+}
+// brush 6
+{
+( -64 80 16 ) ( -64 80 96 ) ( -64 64 96 ) level_textures/TCom_ConcreteNew0059_1_seamless_S 0 0 0 0.5 0.5
+( -64 64 96 ) ( 192 64 96 ) ( 192 64 16 ) level_textures/TCom_ConcreteNew0059_1_seamless_S 0 0 0 0.5 0.5
+( 192 80 16 ) ( -64 80 16 ) ( -64 64 16 ) level_textures/TCom_ConcreteNew0059_1_seamless_S 0 0 0 0.5 0.5
+( -64 64 96 ) ( -64 80 96 ) ( 192 80 96 ) level_textures/TCom_ConcreteNew0059_1_seamless_S 0 0 0 0.5 0.5
+( 192 80 96 ) ( -64 80 96 ) ( -64 80 16 ) level_textures/TCom_ConcreteNew0059_1_seamless_S -16 -16 0 0.5 0.5
+( 192 64 96 ) ( 192 80 96 ) ( 192 80 16 ) level_textures/TCom_ConcreteNew0059_1_seamless_S 0 0 0 0.5 0.5
+}
+// brush 7
+{
+( -64 -192 16 ) ( -64 -192 96 ) ( -64 -208 96 ) level_textures/TCom_ConcreteNew0059_1_seamless_S 0 0 0 0.5 0.5
+( -64 -208 96 ) ( 192 -208 96 ) ( 192 -208 16 ) level_textures/TCom_ConcreteNew0059_1_seamless_S 0 0 0 0.5 0.5
+( 192 -192 16 ) ( -64 -192 16 ) ( -64 -208 16 ) level_textures/TCom_ConcreteNew0059_1_seamless_S 0 0 0 0.5 0.5
+( -64 -208 96 ) ( -64 -192 96 ) ( 192 -192 96 ) level_textures/TCom_ConcreteNew0059_1_seamless_S 0 0 0 0.5 0.5
+( 192 -192 96 ) ( -64 -192 96 ) ( -64 -192 16 ) level_textures/TCom_ConcreteNew0059_1_seamless_S -16 -16 0 0.5 0.5
+( 192 -208 96 ) ( 192 -192 96 ) ( 192 -192 16 ) level_textures/TCom_ConcreteNew0059_1_seamless_S 0 0 0 0.5 0.5
+}
+// brush 8
+{
+( 64 -192 112 ) ( 64 -192 113 ) ( 64 -193 112 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 90 0.5 0.5
+( 64 -192 112 ) ( 63 -192 112 ) ( 64 -192 113 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 90 0.5 0.5
+( 192 -64 80 ) ( 191 -64 80 ) ( 192 -65 80 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 90 0.5 0.5
+( 64 -192 112 ) ( 64 -193 112 ) ( 63 -192 112 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 90 0.5 0.5
+( 192 -64 80 ) ( 192 -64 81 ) ( 191 -64 80 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 90 0.5 0.5
+( 192 -64 80 ) ( 192 -65 80 ) ( 192 -64 81 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 90 0.5 0.5
+}
+// brush 9
+{
+( -64 -192 80 ) ( -64 -191 80 ) ( -64 -192 81 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( -64 -192 80 ) ( -64 -192 81 ) ( -63 -192 80 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( -64 -192 80 ) ( -63 -192 80 ) ( -64 -191 80 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( 64 -64 112 ) ( 64 -63 112 ) ( 65 -64 112 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( 64 -64 112 ) ( 65 -64 112 ) ( 64 -64 113 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( 64 -64 112 ) ( 64 -64 113 ) ( 64 -63 112 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+}
+// brush 10
+{
+( -64 -64 80 ) ( -64 -63 80 ) ( -64 -64 81 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( -64 -64 80 ) ( -64 -64 81 ) ( -63 -64 80 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( -64 -64 80 ) ( -63 -64 80 ) ( -64 -63 80 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( 64 64 112 ) ( 64 65 112 ) ( 65 64 112 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( 64 64 112 ) ( 65 64 112 ) ( 64 64 113 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( 64 64 112 ) ( 64 64 113 ) ( 64 65 112 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+}
+// brush 11
+{
+( 64 -64 80 ) ( 64 -63 80 ) ( 64 -64 81 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 -90 0.5 0.5
+( 64 -64 80 ) ( 64 -64 81 ) ( 65 -64 80 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 -90 0.5 0.5
+( 64 -64 80 ) ( 65 -64 80 ) ( 64 -63 80 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 -90 0.5 0.5
+( 192 64 112 ) ( 192 65 112 ) ( 193 64 112 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 -90 0.5 0.5
+( 192 64 112 ) ( 193 64 112 ) ( 192 64 113 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 -90 0.5 0.5
+( 192 64 112 ) ( 192 64 113 ) ( 192 65 112 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 -90 0.5 0.5
+}
+// brush 12
+{
+( 64 -192 128 ) ( 64 -192 129 ) ( 64 -193 128 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 90 0.5 0.5
+( 64 -192 128 ) ( 63 -192 128 ) ( 64 -192 129 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 90 0.5 0.5
+( 192 -64 96 ) ( 191 -64 96 ) ( 192 -65 96 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 90 0.5 0.5
+( 64 -192 128 ) ( 64 -193 128 ) ( 63 -192 128 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 90 0.5 0.5
+( 192 -64 96 ) ( 192 -64 97 ) ( 191 -64 96 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 90 0.5 0.5
+( 192 -64 96 ) ( 192 -65 96 ) ( 192 -64 97 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 90 0.5 0.5
+}
+// brush 13
+{
+( -64 -192 96 ) ( -64 -191 96 ) ( -64 -192 97 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( -64 -192 96 ) ( -64 -192 97 ) ( -63 -192 96 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( -64 -192 96 ) ( -63 -192 96 ) ( -64 -191 96 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( 64 -64 128 ) ( 64 -63 128 ) ( 65 -64 128 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( 64 -64 128 ) ( 65 -64 128 ) ( 64 -64 129 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( 64 -64 128 ) ( 64 -64 129 ) ( 64 -63 128 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+}
+// brush 14
+{
+( -64 -64 96 ) ( -64 -63 96 ) ( -64 -64 97 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( -64 -64 96 ) ( -64 -64 97 ) ( -63 -64 96 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( -64 -64 96 ) ( -63 -64 96 ) ( -64 -63 96 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( 64 64 128 ) ( 64 65 128 ) ( 65 64 128 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( 64 64 128 ) ( 65 64 128 ) ( 64 64 129 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+( 64 64 128 ) ( 64 64 129 ) ( 64 65 128 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 0 0.5 0.5
+}
+// brush 15
+{
+( 64 -64 96 ) ( 64 -63 96 ) ( 64 -64 97 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 -90 0.5 0.5
+( 64 -64 96 ) ( 64 -64 97 ) ( 65 -64 96 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 -90 0.5 0.5
+( 64 -64 96 ) ( 65 -64 96 ) ( 64 -63 96 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 -90 0.5 0.5
+( 192 64 128 ) ( 192 65 128 ) ( 193 64 128 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 -90 0.5 0.5
+( 192 64 128 ) ( 193 64 128 ) ( 192 64 129 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 -90 0.5 0.5
+( 192 64 128 ) ( 192 64 129 ) ( 192 65 128 ) level_textures/TCom_ConcreteFloors0058_1_seamless_S 0 0 -90 0.5 0.5
+}
+}

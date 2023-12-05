@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjmy06h4u2c4r"
-path.s3tc="res://.godot/imported/texture_01.png-cdf1f3afc9f28d100e6aa4d76793681e.s3tc.ctex"
+uid="uid://bfmbndv1sge56"
+path.bptc="res://.godot/imported/sky.exr-d9c0c68b3ab02de31c2c73d787342a67.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://data/prototype/Orange/texture_01.png"
-dest_files=["res://.godot/imported/texture_01.png-cdf1f3afc9f28d100e6aa4d76793681e.s3tc.ctex"]
+source_file="res://textures/sky.exr"
+dest_files=["res://.godot/imported/sky.exr-d9c0c68b3ab02de31c2c73d787342a67.bptc.ctex"]
 
 [params]
 

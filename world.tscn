@@ -1,21 +1,25 @@
-[gd_scene load_steps=12 format=3 uid="uid://dvbgf6drv86br"]
+[gd_scene load_steps=10 format=3 uid="uid://dvbgf6drv86br"]
 
 [ext_resource type="Script" path="res://data/scripts/world.gd" id="1_cagkg"]
 [ext_resource type="PackedScene" uid="uid://cwiu8nsyij4gn" path="res://data/player/player.tscn" id="2_5txlh"]
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" path="res://textures/sky.exr" id="3_h3g71"]
 [ext_resource type="Texture2D" uid="uid://cknnpbe7gnutf" path="res://data/prototype/Green/texture_01.png" id="4_4fvvu"]
 [ext_resource type="Texture2D" uid="uid://cjmy06h4u2c4r" path="res://data/prototype/Orange/texture_01.png" id="5_8qnkj"]
+=======
+[ext_resource type="Texture2D" uid="uid://bfmbndv1sge56" path="res://textures/sky.exr" id="3_greyq"]
+>>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://03ar8fi8sgwx" path="res://scenes/characters/enemy/enemy.tscn" id="6_3b5hr"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6bxyf"]
-panorama = ExtResource("3_h3g71")
+panorama = ExtResource("3_greyq")
 
-[sub_resource type="Sky" id="Sky_cvyow"]
+[sub_resource type="Sky" id="Sky_jwd2e"]
 sky_material = SubResource("PanoramaSkyMaterial_6bxyf")
 
 [sub_resource type="Environment" id="Environment_xj5u1"]
 background_mode = 2
-sky = SubResource("Sky_cvyow")
+sky = SubResource("Sky_jwd2e")
 ssao_enabled = true
 glow_intensity = 0.29
 glow_bloom = 0.01
@@ -25,10 +29,8 @@ volumetric_fog_enabled = true
 volumetric_fog_density = 0.02
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxrtg"]
-albedo_texture = ExtResource("4_4fvvu")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i11u5"]
-albedo_texture = ExtResource("5_8qnkj")
 
 [node name="SubViewportContainer" type="SubViewportContainer"]
 z_index = 1
@@ -174,4 +176,3 @@ use_collision = true
 size = Vector3(12, 1, 14)
 
 [node name="CharacterBody3D" parent="SubViewport/world" instance=ExtResource("6_3b5hr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2, -24)

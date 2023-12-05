@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfmbndv1sge56"
-path.bptc="res://.godot/imported/sky.exr-37ec48e9e18fbc319abb8caf2057df29.bptc.ctex"
+uid="uid://wabx50jicoo"
+path="res://.godot/imported/texture_01.png-5dfbef9d0e0cef1fd80d0e7295cc43cd.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://data/sky.exr"
-dest_files=["res://.godot/imported/sky.exr-37ec48e9e18fbc319abb8caf2057df29.bptc.ctex"]
+source_file="res://textures/prototype/Light/texture_01.png"
+dest_files=["res://.godot/imported/texture_01.png-5dfbef9d0e0cef1fd80d0e7295cc43cd.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

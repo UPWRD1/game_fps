@@ -77,9 +77,11 @@ libraries = {
 }
 
 [node name="Hud" parent="head/camera" instance=ExtResource("4_4nw8v")]
+visible = false
 
 [node name="pew" parent="head/camera" instance=ExtResource("5_bib1v")]
 transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 0, -0.7, -1.883)
+visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="head/camera"]
 

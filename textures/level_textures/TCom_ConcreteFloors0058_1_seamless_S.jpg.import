@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cknnpbe7gnutf"
-path.s3tc="res://.godot/imported/texture_01.png-d0fc403f15438b641143a73cda93cf9b.s3tc.ctex"
+uid="uid://cisq22enafh2j"
+path.s3tc="res://.godot/imported/TCom_ConcreteFloors0058_1_seamless_S.jpg-147fd5ff78794240ffa71e27e6d7c853.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://data/prototype/Green/texture_01.png"
-dest_files=["res://.godot/imported/texture_01.png-d0fc403f15438b641143a73cda93cf9b.s3tc.ctex"]
+source_file="res://textures/level_textures/TCom_ConcreteFloors0058_1_seamless_S.jpg"
+dest_files=["res://.godot/imported/TCom_ConcreteFloors0058_1_seamless_S.jpg-147fd5ff78794240ffa71e27e6d7c853.s3tc.ctex"]
 
 [params]
 
