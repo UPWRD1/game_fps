@@ -1,15 +1,20 @@
 [gd_scene load_steps=16 format=3 uid="uid://ulkh376h3s5h"]
 
 [ext_resource type="Script" path="res://data/scripts/world.gd" id="1_3hxvk"]
-[ext_resource type="Texture2D" path="res://textures/level_textures/TCom_ConcreteFloors0058_1_seamless_S.jpg" id="2_nokhc"]
+[ext_resource type="Texture2D" uid="uid://cisq22enafh2j" path="res://textures/level_textures/TCom_ConcreteFloors0058_1_seamless_S.jpg" id="2_nokhc"]
 [ext_resource type="Shader" path="res://scenes/levels/psx.gdshader" id="3_q1it8"]
-[ext_resource type="Texture2D" path="res://textures/level_textures/TCom_ConcreteNew0059_1_seamless_S.jpg" id="4_qyesm"]
+[ext_resource type="Texture2D" uid="uid://dhxttgctpfvg8" path="res://textures/level_textures/TCom_ConcreteNew0059_1_seamless_S.jpg" id="4_qyesm"]
 [ext_resource type="PackedScene" uid="uid://cwiu8nsyij4gn" path="res://data/player/player.tscn" id="5_thayl"]
-[ext_resource type="Texture2D" path="res://textures/sky.exr" id="6_rvnj5"]
+[ext_resource type="Texture2D" uid="uid://bfmbndv1sge56" path="res://textures/sky.exr" id="6_rvnj5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_su5y8"]
 render_priority = 0
 shader = ExtResource("3_q1it8")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("2_nokhc")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y236g"]
 next_pass = SubResource("ShaderMaterial_su5y8")
@@ -19,6 +24,11 @@ texture_filter = 0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v7nnu"]
 render_priority = 0
 shader = ExtResource("3_q1it8")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("4_qyesm")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_77t7l"]
 next_pass = SubResource("ShaderMaterial_v7nnu")
