@@ -90,4 +90,5 @@ font_size = 20
 outline_size = 0
 
 [node name="crosshair" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(576, 324)
 texture = ExtResource("2_acna1")

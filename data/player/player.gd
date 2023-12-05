@@ -16,6 +16,8 @@ extends CharacterBody3D
 
 signal significant_action
 
+signal display_bootmsg
+
 enum State {
 	WALKING,
 	JUMPING,
@@ -119,7 +121,6 @@ func _reset_camera_rotation():
 func _ready():
 	world.pause.connect(_on_pause)
 	world.unpause.connect(_on_unpause)
-	
 	parts.camera.current = true
 
 func _process(delta):

@@ -38,3 +38,7 @@ func _on_player_significant_action():
 		#Engine.time_scale = count / 200
 		
 
+
+
+func _on_player_display_bootmsg():
+	pass # Replace with function body.

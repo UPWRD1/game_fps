@@ -1,22 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://trlxj8xuit4j"]
+[gd_scene load_steps=6 format=3 uid="uid://trlxj8xuit4j"]
 
 [ext_resource type="Script" path="res://Label.gd" id="1_omeps"]
 [ext_resource type="FontFile" uid="uid://cg132hx1cuosq" path="res://data/fonts/IBMPlexMono-Regular.ttf" id="1_vu8wd"]
+[ext_resource type="Shader" path="res://data/shaders/glitch.gdshader" id="4_hl3rn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sianc"]
 font = ExtResource("1_vu8wd")
 font_size = 11
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ffmc"]
+resource_local_to_scene = true
+shader = ExtResource("4_hl3rn")
+shader_parameter/shake = 0.0
+shader_parameter/noiseQuality = 250.0
+shader_parameter/noiseIntensity = 0.001
+shader_parameter/offsetIntensity = 0.05
+shader_parameter/colorOffsetIntensity = 0.978
+shader_parameter/greyscale = false
+
 [node name="Node2D" type="Node2D"]
 
 [node name="msgs_text" type="Label" parent="."]
+custom_minimum_size = Vector2(1152, 648)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_left = 35.0
+offset_top = 30.0
+offset_right = 1187.0
+offset_bottom = 678.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.9, 0.9)
 text = ":: Loading initial ramdisk ...
 :: Running early hook [udev]
 :: Starting udevd...
@@ -69,3 +84,16 @@ color = Color(0, 0, 0, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="glitch" type="ColorRect" parent="CanvasLayer"]
+top_level = true
+visibility_layer = 3
+material = SubResource("ShaderMaterial_1ffmc")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3

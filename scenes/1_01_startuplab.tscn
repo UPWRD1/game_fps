@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ulkh376h3s5h"]
+[gd_scene load_steps=19 format=3 uid="uid://ulkh376h3s5h"]
 
 [ext_resource type="Script" path="res://data/scripts/world.gd" id="1_3hxvk"]
 [ext_resource type="Texture2D" uid="uid://cisq22enafh2j" path="res://textures/level_textures/TCom_ConcreteFloors0058_1_seamless_S.jpg" id="2_nokhc"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dhxttgctpfvg8" path="res://textures/level_textures/TCom_ConcreteNew0059_1_seamless_S.jpg" id="4_qyesm"]
 [ext_resource type="PackedScene" uid="uid://cwiu8nsyij4gn" path="res://data/player/player.tscn" id="5_thayl"]
 [ext_resource type="Texture2D" uid="uid://bfmbndv1sge56" path="res://textures/sky.exr" id="6_rvnj5"]
+[ext_resource type="PackedScene" uid="uid://trlxj8xuit4j" path="res://startup.tscn" id="7_b5i10"]
+[ext_resource type="Shader" path="res://data/shaders/glitch.gdshader" id="8_310bc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_su5y8"]
 render_priority = 0
@@ -77,6 +79,16 @@ fog_light_energy = 0.1
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.02
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2fhcn"]
+resource_local_to_scene = true
+shader = ExtResource("8_310bc")
+shader_parameter/shake = 0.0
+shader_parameter/noiseQuality = 250.0
+shader_parameter/noiseIntensity = 0.001
+shader_parameter/offsetIntensity = 0.05
+shader_parameter/colorOffsetIntensity = 0.978
+shader_parameter/greyscale = false
+
 [node name="SubViewportContainer" type="SubViewportContainer"]
 anchors_preset = 15
 anchor_right = 1.0
@@ -118,3 +130,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.83192, 0)
 
 [node name="environment" type="WorldEnvironment" parent="SubViewport/Node3D"]
 environment = SubResource("Environment_kf1bx")
+
+[node name="Node2D" parent="SubViewport" instance=ExtResource("7_b5i10")]
+
+[node name="glitch" parent="SubViewport/Node2D/CanvasLayer" index="0"]
+material = SubResource("ShaderMaterial_2fhcn")
+
+[connection signal="display_bootmsg" from="SubViewport/Node3D/player" to="SubViewport/Node2D/msgs_text" method="_on_player_display_bootmsg"]
+
+[editable path="SubViewport/Node2D"]

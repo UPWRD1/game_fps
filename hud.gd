@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var parts = {
+	"layer": $CanvasLayer,
 	"health": $CanvasLayer/SubViewportContainer/SubViewport/Camera3D/Hud/Node3D/health_human,
 	"ability": $CanvasLayer/SubViewportContainer/SubViewport/Camera3D/Hud/Node3D2/ability,
 	"shield": $CanvasLayer/SubViewportContainer/SubViewport/Camera3D/Hud/Node3D/health_machine,
@@ -12,7 +13,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	parts.layer.visible = false # Replace with function body.
 
 func draw_bar(property: int, bar, symbol: String, reversed: bool):
 	if reversed:
@@ -49,3 +50,17 @@ func updateHUD():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	updateHUD()
+
+func flicker():
+	parts.layer.visible = true
+	await get_tree().create_timer(0.1).timeout
+	parts.layer.visible = false
+	await get_tree().create_timer(0.05).timeout
+	parts.layer.visible = true
+	await get_tree().create_timer(0.005).timeout
+	parts.layer.visible = false
+	await get_tree().create_timer(0.005).timeout
+	parts.layer.visible = true
+
+func _on_msgs_text_hudvis():
+	flicker() # Replace with function body.
