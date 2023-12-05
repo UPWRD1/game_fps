@@ -196,7 +196,7 @@ func shoot():
 	if PlayerVars.ammo > 0:
 		var ani = parts.gun1.get_node("AnimationPlayer")
 		PlayerVars.ammo -= 1
-		ani.play("default", 0)
+		ani.play("default", 0.01)
 		await get_tree().create_timer(0.5).timeout
 	else:
 		reload()

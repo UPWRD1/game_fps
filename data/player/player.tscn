@@ -48,7 +48,7 @@ shader_parameter/noiseQuality = 250.0
 shader_parameter/noiseIntensity = 0.001
 shader_parameter/offsetIntensity = 0.05
 shader_parameter/colorOffsetIntensity = 0.978
-shader_parameter/greyscale = true
+shader_parameter/greyscale = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_62tcw"]
 shader = ExtResource("3_fsoo7")

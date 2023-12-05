@@ -52,7 +52,11 @@ void fragment() {
 
 	//vec4 tex = vec4(r, g, b, 1.0);
 	vec4 tex= vec4(r, g, b, 1.0);
-    float avg = (tex.r + tex.g + tex.b) / 3.0;
-    COLOR.rgb = vec3(avg);
+	if (greyscale) {
+		float avg = (tex.r + tex.g + tex.b) / 3.0;
+		COLOR.rgb = vec3(avg);
+	} else {
+		COLOR = tex;
+	}
 
 }
