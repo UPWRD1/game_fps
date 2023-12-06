@@ -1,11 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwrbptebc6g3i"]
+[gd_scene load_steps=4 format=3 uid="uid://bwrbptebc6g3i"]
 
 [ext_resource type="Script" path="res://spin.gd" id="1_mudpk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5t335"]
+metallic = 0.8
+roughness = 0.0
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 16.0
+rim_tint = 0.84
+clearcoat_enabled = true
+clearcoat_roughness = 0.0
+backlight = Color(1, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3qnga"]
+material = SubResource("StandardMaterial3D_5t335")
+bottom_radius = 0.4
+height = 0.578
 
 [node name="Node3D" type="Node3D"]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, -0.140385, 0)
 light_color = Color(1, 0, 0, 1)
-light_energy = 1.45
+light_volumetric_fog_energy = 16.0
 script = ExtResource("1_mudpk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("CylinderMesh_3qnga")

@@ -21,7 +21,7 @@ func draw_bar(property: int, bar, symbol: String, reversed: bool):
 				var abilityBar = symbol
 				abilityBar += " ["
 				for i in range(property):
-					abilityBar += "="
+					abilityBar += symbol
 				for i in range(5 - property):
 					abilityBar += " "
 				abilityBar += "]"
@@ -30,7 +30,7 @@ func draw_bar(property: int, bar, symbol: String, reversed: bool):
 		if property <= 5:
 			var abilityBar = "["
 			for i in range(property):
-				abilityBar += "="
+				abilityBar += symbol
 			for i in range(5 - property):
 				abilityBar += " "
 			abilityBar += "] "

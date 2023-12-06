@@ -125,6 +125,10 @@ func _process(delta):
 		await keypressed
 		hudvis.emit()
 	elif stage == 3:
+		var g = get_parent().get_node("CanvasLayer/glitch")
+		var bg = get_parent().get_node("ColorRect")
+		bg.visible = false
+		g.visible = false
 		visible = false
 		finished.emit()
 		queue_free()

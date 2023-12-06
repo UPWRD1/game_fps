@@ -89,6 +89,7 @@ func wall_run(delta):
 		state = State.WALL_RUNNING
 		speed = sprint_speed
 		parts.camera.fov = lerp(parts.camera.fov, camera_fov_extents[1], 10*delta)
+		parts.camera.rotation_degrees.y = lerp(parts.camera.rotation_degrees.y, 0.0, 1)
 		if Input.is_action_just_pressed("move_jump"):
 			if state == State.WALL_RUNNING:
 				state = State.WALL_JUMPING
@@ -100,20 +101,24 @@ func wall_run(delta):
 				jump_count = 0
 		if not is_on_floor():
 			var to_rot = 0
-			if abs(fmod(parts.head.rotation_degrees.y, 360.0)) < 180.0:
+			if abs(fmod(parts.head.rotation_degrees.y, 180.0)) < 90.0:
 				if side.dot(Vector3.RIGHT) > 0:
 					to_rot = wallrun_angle
+					print("a", to_rot , " " , abs(fmod(parts.head.rotation_degrees.y, 360.0)), " ", side.dot(Vector3.RIGHT))
 				else:
 					to_rot = -wallrun_angle
+					print("b", to_rot , " " , abs(fmod(parts.head.rotation_degrees.y, 360.0)), " ", side.dot(Vector3.RIGHT))
 			else:
-				if side.dot(Vector3.RIGHT) < 0:
+				if side.dot(Vector3.RIGHT) <= 0:
 					to_rot = wallrun_angle
+					print("c", to_rot , " " , abs(fmod(parts.head.rotation_degrees.y, 360.0)), " ", side.dot(Vector3.RIGHT))
 				else:
 					to_rot = -wallrun_angle
-			#print(to_rot , " " , abs(fmod(parts.head.rotation_degrees.y, 360.0)))
+					print("d", to_rot , " " , abs(fmod(parts.head.rotation_degrees.y, 360.0)), " ", side.dot(Vector3.RIGHT))
+
 		# Set the rotation directly
 			parts.camera.rotation_degrees.z = lerp(parts.camera.rotation_degrees.z, float(to_rot), 0.1)
-		parts.camera.rotation_degrees.y = lerp(parts.camera.rotation_degrees.x, 0.0, 0.1)
+
 
 func _reset_camera_rotation():
 	parts.camera.rotation_degrees.z = lerp(parts.camera.rotation_degrees.z, 0.0, 0.1)
