@@ -49,7 +49,7 @@ shader_parameter/noiseQuality = 250.0
 shader_parameter/noiseIntensity = 0.001
 shader_parameter/offsetIntensity = 0.05
 shader_parameter/colorOffsetIntensity = 0.978
-shader_parameter/greyscale = false
+shader_parameter/greyscale = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_62tcw"]
 shader = ExtResource("3_fsoo7")
@@ -94,7 +94,6 @@ transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 
 visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="head/camera"]
-visible = false
 
 [node name="fisheye" type="ColorRect" parent="head/camera/CanvasLayer"]
 material = SubResource("ShaderMaterial_grp4g")
@@ -117,6 +116,7 @@ grow_vertical = 2
 size_flags_vertical = 3
 
 [node name="bw" type="ColorRect" parent="head/camera/CanvasLayer"]
+visible = false
 z_index = -1
 material = SubResource("ShaderMaterial_62tcw")
 use_parent_material = true

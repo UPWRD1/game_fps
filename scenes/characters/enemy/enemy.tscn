@@ -1,12 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://03ar8fi8sgwx"]
+[gd_scene load_steps=5 format=3 uid="uid://03ar8fi8sgwx"]
 
 [ext_resource type="Script" path="res://scenes/characters/enemy/enemy.gd" id="1_mnjv5"]
-[ext_resource type="Texture2D" uid="uid://bw2k1qm0u10df" path="res://data/textures/prototype/Red/texture_01.png" id="1_ngp2n"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5ygvh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lpre6"]
-albedo_texture = ExtResource("1_ngp2n")
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_2hvds"]
 

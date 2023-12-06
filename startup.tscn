@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://trlxj8xuit4j"]
 
-[ext_resource type="Script" path="res://Label.gd" id="1_omeps"]
+[ext_resource type="Script" path="res://data/scripts/Label.gd" id="1_omeps"]
 [ext_resource type="FontFile" uid="uid://cg132hx1cuosq" path="res://data/fonts/IBMPlexMono-Regular.ttf" id="1_vu8wd"]
 [ext_resource type="Shader" path="res://data/shaders/glitch.gdshader" id="4_hl3rn"]
 

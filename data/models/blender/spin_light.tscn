@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwrbptebc6g3i"]
+
+[ext_resource type="Script" path="res://spin.gd" id="1_mudpk"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
+light_color = Color(1, 0, 0, 1)
+light_energy = 1.45
+script = ExtResource("1_mudpk")
