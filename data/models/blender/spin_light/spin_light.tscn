@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bwrbptebc6g3i"]
 
-[ext_resource type="Script" path="res://spin.gd" id="1_mudpk"]
+[ext_resource type="Script" path="res://data/models/blender/spin_light/spin.gd" id="1_mudpk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5t335"]
 metallic = 0.8

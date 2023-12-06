@@ -11,17 +11,18 @@ config_version=5
 [application]
 
 config/name="first person controller"
-run/main_scene="res://scenes/levels/1_01_startuplab.tscn"
-config/features=PackedStringArray("4.2", "Forward Plus")
+run/main_scene="res://scenes/levels/act1/act1_level1_startup.tscn"
+config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 PlayerVars="*res://player_vars.gd"
+DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/tbloader/plugin.cfg")
+enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg", "res://addons/tbloader/plugin.cfg")
 
 [filesystem]
 

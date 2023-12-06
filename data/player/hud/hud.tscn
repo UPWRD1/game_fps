@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://cbfpia0gwba3w"]
 
 [ext_resource type="FontFile" uid="uid://cg132hx1cuosq" path="res://data/fonts/IBMPlexMono-Regular.ttf" id="1_fhwjs"]
-[ext_resource type="Script" path="res://hud.gd" id="1_l4oh1"]
+[ext_resource type="Script" path="res://data/player/hud/hud.gd" id="1_ktt1v"]
 [ext_resource type="Texture2D" uid="uid://bubwl36108v2r" path="res://data/cursors/crosshair001.png" id="2_acna1"]
 
 [node name="Node2D" type="Node2D"]
 light_mask = 2
 visibility_layer = 2
-script = ExtResource("1_l4oh1")
+script = ExtResource("1_ktt1v")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
