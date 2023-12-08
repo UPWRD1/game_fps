@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://ctrkcw1y1lbr4"]
+
+[ext_resource type="Script" path="res://data/characters/drone.gd" id="1_jl78e"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_8rs7s"]
+resource_local_to_scene = true
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gewr8"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_e7nyo"]
+resource_local_to_scene = true
+radius = 3.89253
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3064j"]
+resource_local_to_scene = true
+radius = 1.49018
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_p6737"]
+radius = 20.0
+
+[node name="drone" type="CharacterBody3D" groups=["enemy"]]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+script = ExtResource("1_jl78e")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, -0.598291)
+mesh = SubResource("SphereMesh_8rs7s")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_8rs7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_gewr8")
+
+[node name="stayclose" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stayclose"]
+transform = Transform3D(3.7, 0, 0, 0, 3.7, 0, 0, 0, 3.7, 0, 0, 0)
+shape = SubResource("SphereShape3D_e7nyo")
+
+[node name="tooclose" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tooclose"]
+transform = Transform3D(3.7, 0, 0, 0, 3.7, 0, 0, 0, 3.7, 0, 0, 0)
+shape = SubResource("SphereShape3D_3064j")
+
+[node name="detect" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="detect"]
+shape = SubResource("CylinderShape3D_p6737")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_exited" from="stayclose" to="." method="_on_too_far"]
+[connection signal="body_entered" from="tooclose" to="." method="_on_too_close"]
+[connection signal="body_entered" from="detect" to="." method="_on_enter_detect"]
+[connection signal="body_exited" from="detect" to="." method="_on_exit_detect"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

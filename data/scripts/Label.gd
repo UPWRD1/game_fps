@@ -108,7 +108,7 @@ func check():
 		keypressed.emit()
 		stage += 1
 
-func _process(delta):
+func _process(_delta):
 	await _on_player_ready()
 	if stage == 0:
 		await write_typewriter(text1)

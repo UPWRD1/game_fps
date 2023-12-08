@@ -1,0 +1,257 @@
+[gd_scene load_steps=36 format=3 uid="uid://ctrkcw1y1lbr4"]
+
+[ext_resource type="Script" path="res://data/characters/drone.gd" id="1_jl78e"]
+[ext_resource type="Script" path="res://addons/imjp94.yafsm/src/StateMachinePlayer.gd" id="2_62fg3"]
+[ext_resource type="Script" path="res://addons/imjp94.yafsm/src/states/StateMachine.gd" id="3_glwt1"]
+[ext_resource type="Script" path="res://addons/imjp94.yafsm/src/states/State.gd" id="4_g7p3j"]
+[ext_resource type="Script" path="res://addons/imjp94.yafsm/src/transitions/Transition.gd" id="5_1kuag"]
+[ext_resource type="Script" path="res://addons/imjp94.yafsm/src/conditions/Condition.gd" id="6_tadku"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_8rs7s"]
+resource_local_to_scene = true
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gewr8"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_e7nyo"]
+resource_local_to_scene = true
+radius = 3.89253
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3064j"]
+resource_local_to_scene = true
+radius = 1.49018
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_p6737"]
+radius = 20.0
+
+[sub_resource type="Resource" id="Resource_mxqau"]
+script = ExtResource("4_g7p3j")
+name = "Entry"
+metadata/graph_offset = Vector2(126, 202)
+
+[sub_resource type="Resource" id="Resource_jhuew"]
+script = ExtResource("4_g7p3j")
+name = "Idle"
+metadata/graph_offset = Vector2(346, 302)
+
+[sub_resource type="Resource" id="Resource_s1v5r"]
+script = ExtResource("4_g7p3j")
+name = "Waiting"
+metadata/graph_offset = Vector2(305, 162)
+
+[sub_resource type="Resource" id="Resource_jpctm"]
+script = ExtResource("4_g7p3j")
+name = "Harass"
+metadata/graph_offset = Vector2(486, 242)
+
+[sub_resource type="Resource" id="Resource_qmqk6"]
+script = ExtResource("4_g7p3j")
+name = "Dodge"
+metadata/graph_offset = Vector2(553, 104)
+
+[sub_resource type="Resource" id="Resource_tlubl"]
+script = ExtResource("4_g7p3j")
+name = "Shoot"
+metadata/graph_offset = Vector2(646, 242)
+
+[sub_resource type="Resource" id="Resource_sqa52"]
+script = ExtResource("4_g7p3j")
+name = "Retreat"
+metadata/graph_offset = Vector2(405.5, 82)
+
+[sub_resource type="Resource" id="Resource_lrpj5"]
+script = ExtResource("5_1kuag")
+from = "Entry"
+to = "Waiting"
+conditions = {}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_qf65y"]
+script = ExtResource("5_1kuag")
+from = "Entry"
+to = "Idle"
+conditions = {}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_xsiu1"]
+script = ExtResource("5_1kuag")
+from = "Waiting"
+to = "Idle"
+conditions = {}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_job31"]
+script = ExtResource("6_tadku")
+name = "PlayerEnter"
+
+[sub_resource type="Resource" id="Resource_xop5l"]
+script = ExtResource("5_1kuag")
+from = "Waiting"
+to = "Harass"
+conditions = {
+"PlayerEnter": SubResource("Resource_job31")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_qjwi8"]
+script = ExtResource("5_1kuag")
+from = "Idle"
+to = "Waiting"
+conditions = {}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_2ho8x"]
+script = ExtResource("6_tadku")
+name = "PlayerEnter"
+
+[sub_resource type="Resource" id="Resource_oe1r1"]
+script = ExtResource("5_1kuag")
+from = "Idle"
+to = "Harass"
+conditions = {
+"PlayerEnter": SubResource("Resource_2ho8x")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_8cv5t"]
+script = ExtResource("5_1kuag")
+from = "Harass"
+to = "Dodge"
+conditions = {}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_6trxb"]
+script = ExtResource("5_1kuag")
+from = "Harass"
+to = "Shoot"
+conditions = {}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_bqls2"]
+script = ExtResource("5_1kuag")
+from = "Harass"
+to = "Retreat"
+conditions = {}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_hgfcc"]
+script = ExtResource("5_1kuag")
+from = "Dodge"
+to = "Harass"
+conditions = {}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_nyh86"]
+script = ExtResource("5_1kuag")
+from = "Dodge"
+to = "Shoot"
+conditions = {}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_iscq5"]
+script = ExtResource("5_1kuag")
+from = "Shoot"
+to = "Harass"
+conditions = {}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_6d8v7"]
+script = ExtResource("5_1kuag")
+from = "Retreat"
+to = "Harass"
+conditions = {}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_enjv5"]
+script = ExtResource("5_1kuag")
+from = "Retreat"
+to = "Dodge"
+conditions = {}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_l1wnh"]
+script = ExtResource("3_glwt1")
+states = {
+"Dodge": SubResource("Resource_qmqk6"),
+"Entry": SubResource("Resource_mxqau"),
+"Harass": SubResource("Resource_jpctm"),
+"Idle": SubResource("Resource_jhuew"),
+"Retreat": SubResource("Resource_sqa52"),
+"Shoot": SubResource("Resource_tlubl"),
+"Waiting": SubResource("Resource_s1v5r")
+}
+transitions = {
+"Dodge": {
+"Harass": SubResource("Resource_hgfcc"),
+"Shoot": SubResource("Resource_nyh86")
+},
+"Entry": {
+"Idle": SubResource("Resource_qf65y"),
+"Waiting": SubResource("Resource_lrpj5")
+},
+"Harass": {
+"Dodge": SubResource("Resource_8cv5t"),
+"Retreat": SubResource("Resource_bqls2"),
+"Shoot": SubResource("Resource_6trxb")
+},
+"Idle": {
+"Harass": SubResource("Resource_oe1r1"),
+"Waiting": SubResource("Resource_qjwi8")
+},
+"Retreat": {
+"Dodge": SubResource("Resource_enjv5"),
+"Harass": SubResource("Resource_6d8v7")
+},
+"Shoot": {
+"Harass": SubResource("Resource_iscq5")
+},
+"Waiting": {
+"Harass": SubResource("Resource_xop5l"),
+"Idle": SubResource("Resource_xsiu1")
+}
+}
+name = ""
+
+[node name="drone" type="CharacterBody3D" groups=["enemy"]]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+script = ExtResource("1_jl78e")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, -0.598291)
+mesh = SubResource("SphereMesh_8rs7s")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_8rs7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_gewr8")
+
+[node name="stayclose" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stayclose"]
+transform = Transform3D(3.7, 0, 0, 0, 3.7, 0, 0, 0, 3.7, 0, 0, 0)
+shape = SubResource("SphereShape3D_e7nyo")
+
+[node name="tooclose" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tooclose"]
+transform = Transform3D(3.7, 0, 0, 0, 3.7, 0, 0, 0, 3.7, 0, 0, 0)
+shape = SubResource("SphereShape3D_3064j")
+
+[node name="detect" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="detect"]
+shape = SubResource("CylinderShape3D_p6737")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="StateMachinePlayer" type="Node" parent="."]
+script = ExtResource("2_62fg3")
+state_machine = SubResource("Resource_l1wnh")
+
+[connection signal="body_exited" from="stayclose" to="." method="_on_too_far"]
+[connection signal="body_entered" from="tooclose" to="." method="_on_too_close"]
+[connection signal="body_entered" from="detect" to="." method="_on_enter_detect"]
+[connection signal="body_exited" from="detect" to="." method="_on_exit_detect"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="updated" from="StateMachinePlayer" to="." method="_on_state_machine_player_updated"]

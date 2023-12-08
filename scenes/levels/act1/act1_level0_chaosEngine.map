@@ -1,0 +1,99 @@
+// Game: Godot
+// Format: Standard
+// entity 0
+{
+"classname" "worldspawn"
+"_tb_mod" "textures"
+"_tb_textures" "textures/level_textures"
+// brush 0
+{
+( -21 -21 -32 ) ( -32 0 -32 ) ( -32 0 32 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( -32 0 32 ) ( -32 0 -32 ) ( -21 21 -32 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( -21 -21 32 ) ( 0 -32 32 ) ( 0 -32 -32 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 0 32 -32 ) ( 0 32 32 ) ( -21 21 32 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 21 -21 -32 ) ( 32 0 -32 ) ( 21 21 -32 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 21 21 32 ) ( 32 0 32 ) ( 21 -21 32 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 0 -32 32 ) ( 21 -21 32 ) ( 21 -21 -32 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 0 32 32 ) ( 0 32 -32 ) ( 21 21 -32 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 21 -21 32 ) ( 32 0 32 ) ( 32 0 -32 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 32 0 -32 ) ( 32 0 32 ) ( 21 21 32 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+}
+// brush 1
+{
+( -26 243 16 ) ( 176 -160 48 ) ( 176 -160 -16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 0 256 16 ) ( -26 243 16 ) ( -26 243 -16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( -26 243 16 ) ( 256 0 48 ) ( 176 -160 48 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 171 171 32 ) ( 256 0 48 ) ( -26 243 16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 0 256 16 ) ( 171 171 32 ) ( -26 243 16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 176 -160 -16 ) ( 256 0 -16 ) ( 171 171 -16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 171 171 -16 ) ( 171 171 32 ) ( 0 256 16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 176 -160 48 ) ( 256 0 48 ) ( 256 0 -16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 256 0 -16 ) ( 256 0 48 ) ( 171 171 32 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+}
+// brush 2
+{
+( -256 0 48 ) ( -171 -171 32 ) ( -171 -171 -16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( -176 160 48 ) ( -256 0 48 ) ( -256 0 -16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( -171 -171 32 ) ( 0 -256 16 ) ( 0 -256 -16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 0 -256 -16 ) ( 26 -243 -16 ) ( -176 160 -16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( -171 -171 32 ) ( 26 -243 16 ) ( 0 -256 16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( -256 0 48 ) ( 26 -243 16 ) ( -171 -171 32 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( -176 160 48 ) ( 26 -243 16 ) ( -256 0 48 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 0 -256 16 ) ( 26 -243 16 ) ( 26 -243 -16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 26 -243 -16 ) ( 26 -243 16 ) ( -176 160 48 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+}
+// brush 3
+{
+( -171 171 48 ) ( -176 160 48 ) ( -176 160 -16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( -176 160 48 ) ( -96 0 32 ) ( -96 0 -16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( -26 243 -16 ) ( -26 243 48 ) ( -171 171 48 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( -96 0 -16 ) ( 0 192 -16 ) ( -26 243 -16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( -26 243 48 ) ( 0 192 48 ) ( -176 160 48 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( -176 160 48 ) ( 0 192 48 ) ( -96 0 32 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 0 192 -16 ) ( 0 192 48 ) ( -26 243 48 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( -96 0 32 ) ( 0 192 48 ) ( 0 192 -16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+}
+// brush 4
+{
+( 96 0 -16 ) ( 96 0 32 ) ( 0 -192 48 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 26 -243 -16 ) ( 0 -192 -16 ) ( 0 -192 48 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 96 0 32 ) ( 176 -160 48 ) ( 0 -192 48 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 171 -171 -16 ) ( 176 -160 -16 ) ( 96 0 -16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 0 -192 48 ) ( 176 -160 48 ) ( 171 -171 48 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 26 -243 48 ) ( 171 -171 48 ) ( 171 -171 -16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 176 -160 -16 ) ( 176 -160 48 ) ( 96 0 32 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 171 -171 48 ) ( 176 -160 48 ) ( 176 -160 -16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+}
+// brush 5
+{
+( 0 192 16 ) ( -38 115 32 ) ( -38 115 -16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( -38 115 32 ) ( 64 64 32 ) ( 64 64 -16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( -38 115 -16 ) ( 64 64 -16 ) ( 0 192 -16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 0 192 16 ) ( 64 64 32 ) ( -38 115 32 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 64 64 -16 ) ( 64 64 32 ) ( 0 192 16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+}
+// brush 6
+{
+( 0 -192 -16 ) ( -64 -64 -16 ) ( -64 -64 32 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( -64 -64 32 ) ( 38 -115 32 ) ( 0 -192 16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 0 -192 -16 ) ( 38 -115 -16 ) ( -64 -64 -16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 38 -115 -16 ) ( 38 -115 32 ) ( -64 -64 32 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 0 -192 16 ) ( 38 -115 32 ) ( 38 -115 -16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+}
+// brush 7
+{
+( 38 -115 -16 ) ( 0 -96 -16 ) ( 0 -96 16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 64 -64 -16 ) ( 64 -64 16 ) ( 0 -96 16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 38 -115 -16 ) ( 64 -64 -16 ) ( 0 -96 -16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 0 -96 16 ) ( 64 -64 16 ) ( 38 -115 16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 38 -115 16 ) ( 64 -64 16 ) ( 64 -64 -16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+}
+// brush 8
+{
+( -38 115 16 ) ( -64 64 16 ) ( -64 64 -16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( -64 64 -16 ) ( 0 96 -16 ) ( -38 115 -16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( -38 115 16 ) ( 0 96 16 ) ( -64 64 16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( -64 64 16 ) ( 0 96 16 ) ( 0 96 -16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+( 0 96 -16 ) ( 0 96 16 ) ( -38 115 16 ) level_textures/TCom_MetalGalvanized0022_1_seamless_S 0 0 0 0.2 0.2
+}
+}
