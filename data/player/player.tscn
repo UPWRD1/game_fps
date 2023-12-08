@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cwiu8nsyij4gn"]
+[gd_scene load_steps=46 format=3 uid="uid://cwiu8nsyij4gn"]
 
 [ext_resource type="Script" path="res://data/player/player.gd" id="1_u1w3t"]
 [ext_resource type="Shader" path="res://data/shaders/glitch.gdshader" id="2_6sdgu"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://addons/imjp94.yafsm/src/states/StateMachine.gd" id="10_a3nre"]
 [ext_resource type="Script" path="res://addons/imjp94.yafsm/src/states/State.gd" id="11_fh4gq"]
 [ext_resource type="Script" path="res://addons/imjp94.yafsm/src/transitions/Transition.gd" id="12_78hy8"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="13_w5apc"]
 
 [sub_resource type="Animation" id="Animation_saxjg"]
 resource_name = "head_bob"
@@ -83,20 +84,20 @@ script = ExtResource("11_fh4gq")
 name = "Entry"
 metadata/graph_offset = Vector2(26, 102)
 
+[sub_resource type="Resource" id="Resource_vxjjk"]
+script = ExtResource("11_fh4gq")
+name = "Falling"
+metadata/graph_offset = Vector2(755.132, 16.2381)
+
+[sub_resource type="Resource" id="Resource_2hmql"]
+script = ExtResource("11_fh4gq")
+name = "Ground Pound"
+metadata/graph_offset = Vector2(672.619, 193.619)
+
 [sub_resource type="Resource" id="Resource_k27td"]
 script = ExtResource("11_fh4gq")
 name = "Idle"
 metadata/graph_offset = Vector2(166, 62)
-
-[sub_resource type="Resource" id="Resource_m64bj"]
-script = ExtResource("11_fh4gq")
-name = "Walking"
-metadata/graph_offset = Vector2(283.5, 102)
-
-[sub_resource type="Resource" id="Resource_8cpvu"]
-script = ExtResource("11_fh4gq")
-name = "Wall Running"
-metadata/graph_offset = Vector2(187, 242)
 
 [sub_resource type="Resource" id="Resource_kxtx1"]
 script = ExtResource("11_fh4gq")
@@ -108,15 +109,15 @@ script = ExtResource("11_fh4gq")
 name = "Sliding"
 metadata/graph_offset = Vector2(266, 162)
 
-[sub_resource type="Resource" id="Resource_2hmql"]
+[sub_resource type="Resource" id="Resource_m64bj"]
 script = ExtResource("11_fh4gq")
-name = "Ground Pound"
-metadata/graph_offset = Vector2(672.619, 193.619)
+name = "Walking"
+metadata/graph_offset = Vector2(283.5, 102)
 
-[sub_resource type="Resource" id="Resource_vxjjk"]
+[sub_resource type="Resource" id="Resource_8cpvu"]
 script = ExtResource("11_fh4gq")
-name = "Falling"
-metadata/graph_offset = Vector2(755.132, 16.2381)
+name = "Wall Running"
+metadata/graph_offset = Vector2(187, 242)
 
 [sub_resource type="Resource" id="Resource_5ugbb"]
 script = ExtResource("12_78hy8")
@@ -125,17 +126,10 @@ to = "Idle"
 conditions = {}
 priority = 0
 
-[sub_resource type="Resource" id="Resource_4mhwj"]
+[sub_resource type="Resource" id="Resource_jhn3v"]
 script = ExtResource("12_78hy8")
-from = "Idle"
-to = "Walking"
-conditions = {}
-priority = 0
-
-[sub_resource type="Resource" id="Resource_bbsqh"]
-script = ExtResource("12_78hy8")
-from = "Idle"
-to = "Wall Running"
+from = "Falling"
+to = "Idle"
 conditions = {}
 priority = 0
 
@@ -153,6 +147,41 @@ to = "Sliding"
 conditions = {}
 priority = 0
 
+[sub_resource type="Resource" id="Resource_4mhwj"]
+script = ExtResource("12_78hy8")
+from = "Idle"
+to = "Walking"
+conditions = {}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_bbsqh"]
+script = ExtResource("12_78hy8")
+from = "Idle"
+to = "Wall Running"
+conditions = {}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_5yffa"]
+script = ExtResource("12_78hy8")
+from = "Jumping"
+to = "Falling"
+conditions = {}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_blfer"]
+script = ExtResource("12_78hy8")
+from = "Sliding"
+to = "Idle"
+conditions = {}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_k7qh3"]
+script = ExtResource("12_78hy8")
+from = "Sliding"
+to = "Jumping"
+conditions = {}
+priority = 0
+
 [sub_resource type="Resource" id="Resource_3awcv"]
 script = ExtResource("12_78hy8")
 from = "Walking"
@@ -167,13 +196,6 @@ to = "Jumping"
 conditions = {}
 priority = 0
 
-[sub_resource type="Resource" id="Resource_2lmkg"]
-script = ExtResource("12_78hy8")
-from = "Wall Running"
-to = "Jumping"
-conditions = {}
-priority = 0
-
 [sub_resource type="Resource" id="Resource_fnnoy"]
 script = ExtResource("12_78hy8")
 from = "Wall Running"
@@ -181,31 +203,10 @@ to = "Idle"
 conditions = {}
 priority = 0
 
-[sub_resource type="Resource" id="Resource_k7qh3"]
+[sub_resource type="Resource" id="Resource_2lmkg"]
 script = ExtResource("12_78hy8")
-from = "Sliding"
+from = "Wall Running"
 to = "Jumping"
-conditions = {}
-priority = 0
-
-[sub_resource type="Resource" id="Resource_blfer"]
-script = ExtResource("12_78hy8")
-from = "Sliding"
-to = "Idle"
-conditions = {}
-priority = 0
-
-[sub_resource type="Resource" id="Resource_5yffa"]
-script = ExtResource("12_78hy8")
-from = "Jumping"
-to = "Falling"
-conditions = {}
-priority = 0
-
-[sub_resource type="Resource" id="Resource_jhn3v"]
-script = ExtResource("12_78hy8")
-from = "Falling"
-to = "Idle"
 conditions = {}
 priority = 0
 
@@ -331,6 +332,9 @@ material = SubResource("ShaderMaterial_iw2dk")
 [node name="StateMachinePlayer" type="Node" parent="."]
 script = ExtResource("9_3vuw5")
 state_machine = SubResource("Resource_v516w")
+
+[node name="StateChart" type="Node" parent="."]
+script = ExtResource("13_w5apc")
 
 [connection signal="ready" from="." to="Node2D/msgs_text" method="_on_player_ready"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
